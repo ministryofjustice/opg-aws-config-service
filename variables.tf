@@ -1,9 +1,3 @@
-variable "config_name" {
-  description = "The name of the AWS Config instance."
-  type        = string
-  default     = "aws-config"
-}
-
 variable "config_aggregator_name" {
   description = "The name of the aggregator."
   type        = string
@@ -14,6 +8,12 @@ variable "aggregate_organization" {
   description = "Aggregate compliance data by organization"
   type        = bool
   default     = false
+}
+
+variable "config_name" {
+  description = "The name of the AWS Config instance."
+  type        = string
+  default     = "aws-config"
 }
 
 variable "config_logs_prefix" {
@@ -43,7 +43,7 @@ variable "include_global_resource_types" {
 variable "alerts_channel" {
   description = "Where our alerts get sent"
   type        = string
-  default     = "opg_config_alerts"
+  default     = "config_alerts"
 }
 
 variable "config_logs_bucket_prefix" {
@@ -51,11 +51,7 @@ variable "config_logs_bucket_prefix" {
   default = "config-logs"
 }
 
-variable "is_proudction" {
+variable "is_production" {
   type    = bool
   default = false
 }
-
-variable "config_iam_role" {}
-
-variable "config_s3_bucket" {}

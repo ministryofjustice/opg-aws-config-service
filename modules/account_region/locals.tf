@@ -11,8 +11,6 @@ locals {
     source-code            = "https://github.com/ministryofjustice/opg-aws-config"
   }
 
-  rules = jsondecode(file("${path.module}/rules.json"))
-
+  inner_rules = jsondecode(file("${path.module}/rules.json"))
+  rules       = merge(local.inner_rules, var.bespoke_rules)
 }
-
-

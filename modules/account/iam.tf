@@ -1,7 +1,5 @@
-# Get the access to the effective Account ID in which Terraform is working.
-data "aws_partition" "current" {}
-
-data "aws_caller_identity" "current" {}
+# Allow the AWS Config role to deliver logs to configured S3 Bucket.
+# Derived from IAM Policy document found at https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html
 
 data "aws_iam_policy_document" "aws_config_policy" {
   policy_id = "PutObjPolicy"
@@ -38,10 +36,6 @@ data "aws_iam_policy_document" "aws_config_policy" {
     }
   }
 }
-
-# Allow the AWS Config role to deliver logs to configured S3 Bucket.
-# Derived from IAM Policy document found at https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html
-
 
 # Allow IAM policy to assume the role for AWS Config
 data "aws_iam_policy_document" "aws-config-role-policy" {

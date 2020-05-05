@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+set -e
 URL="https://docs.aws.amazon.com/config/latest/developerguide"
 
 curl -X GET -s "${URL}/managed-rules-by-aws-config.html" | grep "<p><a href=\"./" | grep .html | awk -F'./' '{print$2}' | awk -F'">' '{print$1}' > rules.txt

@@ -11,4 +11,3 @@ locals {
     source-code            = "https://github.com/ministryofjustice/opg-aws-config-service"
   }
 }
-

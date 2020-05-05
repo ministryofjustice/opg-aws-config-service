@@ -1,0 +1,25 @@
+---
+version: 2.1
+
+workflows:
+  on_build:
+    jobs:
+      - validate_repository:
+          name: validate terraform code
+          filters: {branches:{ignore:[master]}}
+
+jobs:
+  validate_repository:
+    docker:
+      - image: hashicorp/terraform
+    steps:
+      - checkout
+      - run:
+          name: Initialise terraform
+          command: terraform init
+      - run:
+          name: Lint Terraform
+          command: terraform fmt -diff -check -recursive
+      - run:
+          name: Validate Terraform
+          command: terraform validate
