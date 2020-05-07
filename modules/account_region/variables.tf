@@ -1,7 +1,6 @@
 variable "config_name" {
   description = "The name of the AWS Config instance."
   type        = string
-  default     = "aws-config"
 }
 
 variable "config_max_execution_frequency" {
@@ -20,12 +19,6 @@ variable "include_global_resource_types" {
   description = "Specifies whether AWS Config includes all supported types of global resources with the resources that it records."
   type        = bool
   default     = true
-}
-
-variable "alerts_channel" {
-  description = "Where our alerts get sent"
-  type        = string
-  default     = "opg_config_alerts"
 }
 
 variable "is_production" {

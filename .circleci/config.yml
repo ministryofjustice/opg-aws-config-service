@@ -16,10 +16,10 @@ jobs:
       - checkout
       - run:
           name: Initialise terraform
-          command: terraform init
+          command: terraform init example
       - run:
           name: Lint Terraform
           command: terraform fmt -diff -check -recursive
       - run:
           name: Validate Terraform
-          command: terraform validate
+          command: terraform validate example

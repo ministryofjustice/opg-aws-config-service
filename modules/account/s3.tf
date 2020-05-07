@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "config" {
-  bucket        = "${var.config_logs_bucket_prefix}-${data.aws_caller_identity.current.account_id}"
+  bucket        = "${var.config_name}-${data.aws_caller_identity.current.account_id}"
   acl           = "private"
   force_destroy = true
 

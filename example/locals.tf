@@ -1,3 +1,5 @@
 locals {
-  rules = jsondecode(file("${path.module}/rules.json"))
+  rules                  = jsondecode(file("${path.module}/rules.json"))
+  aggregate_organization = false
+
 }
