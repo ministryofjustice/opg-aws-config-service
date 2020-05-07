@@ -41,4 +41,5 @@ resource "aws_config_configuration_aggregator" "organization" {
     all_regions = true
     role_arn    = aws_iam_role.aggregator[0].arn
   }
+  tags = var.tags
 }

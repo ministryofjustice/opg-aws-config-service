@@ -2,5 +2,5 @@ provider "aws" {
 }
 
 provider "aws" {
-  alias = "main"
+  alias = "main_region_provider"
 }

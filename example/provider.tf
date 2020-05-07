@@ -1,5 +1,5 @@
 provider "aws" {
-  alias  = "eu_west_1"
+  alias  = "main_region_provider"
   region = "eu-west-1"
 
   assume_role {

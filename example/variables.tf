@@ -22,7 +22,7 @@ variable "config_logs_prefix" {
   default     = "config"
 }
 
-variable "config_max_execution_frequency" {
+variable "rule_maximum_execution_frequency" {
   description = "The maximum frequency with which AWS Config runs evaluations for a rule."
   type        = string
   default     = "TwentyFour_Hours"
@@ -38,9 +38,4 @@ variable "include_global_resource_types" {
   description = "Specifies whether AWS Config includes all supported types of global resources with the resources that it records."
   type        = bool
   default     = true
-}
-
-variable "is_production" {
-  type    = bool
-  default = false
 }
