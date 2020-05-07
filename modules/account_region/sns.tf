@@ -1,5 +1,6 @@
 resource "aws_sns_topic" "config" {
   name = var.config_name
+  tags = var.tags
 }
 
 resource "aws_sns_topic_policy" "config" {
