@@ -24,3 +24,9 @@ variable "is_production" {
   type    = bool
   default = false
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "A map of tags to add to all resources"
+  default     = {}
+}

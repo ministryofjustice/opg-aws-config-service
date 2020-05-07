@@ -10,7 +10,7 @@ resource "aws_config_config_rule" "generic" {
     source_identifier = each.value.source_identifier
   }
 
-  tags = local.default_tags
+  tags = var.tags
 
   depends_on = [aws_config_configuration_recorder.main]
 }
