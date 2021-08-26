@@ -1,6 +1,7 @@
 resource "aws_sns_topic" "config" {
-  name = var.config_name
-  tags = var.tags
+  name              = var.config_name
+  tags              = var.tags
+  kms_master_key_id = "alias/aws/sns"
 }
 
 resource "aws_sns_topic_policy" "config" {
